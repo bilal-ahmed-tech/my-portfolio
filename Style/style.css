@@ -4,12 +4,24 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* ===== COLOR VARIABLES ===== */
+:root {
+  --primary: #ff5722;
+  --primary-dark: #e44514;
+  --primary-light: #ff8a50;
+  --primary-tint: #fff5f0;
+  --bg-main: #ffffff;
+  --bg-section: #f8f8f6;
+  --text-heading: #1a1a1a;
+  --text-body: #555555;
+  --text-muted: #888888;
+  --border: #e0ddd8;
+  --transition-smooth: 0.23s ease-in;
+}
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #0a0a0a;
-  color: #ffffff;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
 /* ===== SCROLLBAR ===== */
@@ -20,26 +32,69 @@ body {
   background: #0a0a0a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #6c63ff;
+  background: var(--primary-light);
   border-radius: 10px;
 }
 
+/* ===== GRADIENT UTILITY ===== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: 600;
+  transition: box-shadow 0.2s;
+}
+
+.btn-primary-custom:hover {
+  color: #fff;
+  box-shadow: 0 3px 4px rgba(255, 87, 34, 0.3);
+}
+.btn-primary-custom:active {
+  color: white !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--primary-light)
+  );
+  box-shadow: 0 3px 4px rgba(255, 87, 34, 0.3);
+}
+
+
+/* ==== Nav List Style ==== */
+.nav-link {
+  font-weight: 600;
+  padding: 8px;
+}
+.active:hover,
+.nav-link:hover {
+  transition: color var(--transition-smooth);
+  color: var(--primary-dark) !important;
+}
+.nav-link:active{
+  color: var(--primary)!important;
+}
+.nav-link-btn {
+  display: block;
+  width: 70%;
+}
 /* ===== REUSABLE ===== */
 section {
   padding: 80px 0;
 }
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.section-title span {
-  color: #6c63ff;
-}
-
-.accent {
-  color: #6c63ff;
+@media screen and (min-width: 992px) {
+  .nav-link-btn {
+    width: fit-content;
+  }
+  .btn-primary-custom{
+    padding: 8px 30px ;
+  }
 }
