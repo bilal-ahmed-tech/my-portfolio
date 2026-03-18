@@ -13,12 +13,15 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet" />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Style/style.css" />
   </head>
   <body>
-      <!-- NavBar -->
+    <!-- NavBar -->
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
         <div class="container-fluid">
@@ -67,7 +70,8 @@
       <!-- HERO SECTION -->
       <section id="home" class="hero-section">
         <div class="container">
-          <div class="row align-items-center justify-content-lg-between justify-content-center">
+          <div
+            class="row align-items-center justify-content-lg-between justify-content-center">
             <!-- Text Side -->
             <div
               class="col-lg-6 col-md-12 text-center order-2 order-lg-1 hero-text">
@@ -95,10 +99,76 @@
               class="col-lg-4 col-md-8 col-10 text-center order-1 order-lg-2 mb-4 mb-lg-0">
               <div class="hero-img-wrap">
                 <img
-                  src="images/profile-pic.png"
+                  src="images/profile-pic.webp"
                   alt="Bilal Developer"
                   class="hero-img" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div
+            class="row align-items-center justify-content-center gap-4 gap-lg-0">
+            <!-- Image Side -->
+            <div class="col-lg-5 col-md-8 col-10 text-center">
+              <div class="about-img-wrap">
+                <img
+                  src="images/profile-pic.webp"
+                  loading="lazy"
+                  alt="Bilal Developer"
+                  class="about-img" />
+                <div class="about-img-badge">
+                  <span class="badge-number">1+</span>
+                  <span class="badge-text">Year Experience</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text Side -->
+            <div class="col-lg-6 col-md-12">
+              <p class="section-subtitle">Get To Know Me</p>
+              <h2 class="section-title">
+                About <span class="gradient-text">Me</span>
+              </h2>
+              <p class="about-desc">
+                Hi! I'm Bilal, a passionate Frontend Web Developer based in
+                Pakistan. I specialize in building clean, responsive, and
+                user-friendly websites using HTML, CSS, and Bootstrap. I love
+                turning ideas into beautiful web experiences that help
+                businesses grow online.
+              </p>
+              <p class="about-desc">
+                I'm currently available for freelance projects. Whether you need
+                a landing page, a full business website, or anything in between
+                — I'd love to work with you!
+              </p>
+
+              <!-- Stats -->
+              <div class="about-stats">
+                <div class="stat-item">
+                  <span class="stat-number gradient-text">3+</span>
+                  <span class="stat-label">Projects Done</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number gradient-text">1+</span>
+                  <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number gradient-text">100%</span>
+                  <span class="stat-label">On Time Delivery</span>
+                </div>
+              </div>
+
+              <!-- CV Button -->
+              <a
+                href="files/Bilal-CV.pdf"
+                download
+                class="btn btn-primary-custom btn-hero mt-4">
+                <i class="fa-solid fa-download me-2"></i>Download CV
+              </a>
             </div>
           </div>
         </div>
