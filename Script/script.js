@@ -1,84 +1,199 @@
-// Animate skill bars using Intersection Observer
-const skillFills = document.querySelectorAll(".skill-fill");
+document.addEventListener("DOMContentLoaded", () => {
+  // ============================================
+  // NAVBAR — FULLSCREEN MOBILE MENU
+  // ============================================
+  const navCollapse = document.querySelector("#navbarNav");
+  const togglerOpen = document.querySelector(".toggler-open");
+  const togglerClose = document.querySelector(".toggler-close");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const fill = entry.target;
-        fill.style.width = fill.getAttribute("data-width") + "%";
-        // Stop observing after animation triggers once
-        observer.unobserve(fill);
+  if (navCollapse) {
+    const bsCollapse = new bootstrap.Collapse(navCollapse, { toggle: false });
+
+    // Switch hamburger to X
+    navCollapse.addEventListener("show.bs.collapse", () => {
+      togglerOpen?.classList.add("d-none");
+      togglerClose?.classList.remove("d-none");
+    });
+
+    // Switch X back to hamburger
+    navCollapse.addEventListener("hide.bs.collapse", () => {
+      togglerOpen?.classList.remove("d-none");
+      togglerClose?.classList.add("d-none");
+    });
+
+    // Event delegation — one listener on navbar-nav handles all link clicks
+    const navbarNav = document.querySelector(".navbar-nav");
+    navbarNav?.addEventListener("click", (e) => {
+      const clicked = e.target.closest(".nav-link, .nav-link-btn");
+      if (clicked && navCollapse.classList.contains("show")) {
+        bsCollapse.hide();
       }
     });
-  },
-  {
-    threshold: 0.3,
-  },
-);
+  }
+  const lgBreakpoint = window.matchMedia("(min-width: 992px)");
 
-// Observe each skill bar
-skillFills.forEach((fill) => observer.observe(fill));
-// Project filter
-const filterBtns = document.querySelectorAll(".filter-btn");
-const projectItems = document.querySelectorAll(".project-item");
+lgBreakpoint.addEventListener("change", (e) => {
+  // Temporarily disable transition
+  navCollapse.style.transition = "none";
 
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    // Update active button
-    filterBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
+  if (e.matches) {
+    // Crossed to desktop — close menu if open
+    if (navCollapse.classList.contains("show")) {
+      bsCollapse.hide();
+    }
+  } 
 
-    const filter = btn.getAttribute("data-filter");
-
-    projectItems.forEach((item) => {
-      const category = item.getAttribute("data-category");
-      if (filter === "all" || category === filter) {
-        item.classList.remove("hidden");
-      } else {
-        item.classList.add("hidden");
-      }
+  // Re-enable transition after a frame
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      navCollapse.style.transition = "";
     });
   });
 });
-// Contact form validation
-const sendBtn = document.getElementById("send-btn");
-const formMsg = document.getElementById("form-msg");
 
-sendBtn.addEventListener("click", () => {
-  const inputs = document.querySelectorAll(".form-input");
-  let allFilled = true;
+  // ============================================
+  // ACTIVE NAV LINK ON SCROLL
+  // Intersection Observer — performant, no scroll event
+  // ============================================
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-  inputs.forEach((input) => {
-    if (!input.value.trim()) {
-      allFilled = false;
-      input.style.borderColor = "#dc3545";
-    } else {
-      input.style.borderColor = "var(--primary)";
-    }
-  });
+  if (sections.length > 0 && navLinks.length > 0) {
+    const setActiveLink = (id) => {
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("active", isActive);
+        if (isActive) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
 
-  if (!allFilled) {
-    formMsg.textContent = "Please fill in all fields.";
-    formMsg.className = "form-note error";
-    return;
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.getAttribute("id"));
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    sections.forEach((section) => navObserver.observe(section));
   }
 
-  // Success message
-  formMsg.textContent = "Message sent successfully!";
-  formMsg.className = "form-note success";
+  // ============================================
+  // SKILLS — ANIMATE BARS ON SCROLL
+  // ============================================
+  const skillFills = document.querySelectorAll(".skill-fill");
 
-  // Clear form
-  inputs.forEach((input) => {
-    input.value = "";
-    input.style.borderColor = "var(--border)";
-  });
+  if (skillFills.length > 0) {
+    const skillObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const fill = entry.target;
+            fill.style.width = fill.getAttribute("data-width") + "%";
+            skillObserver.unobserve(fill);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
 
-  // Clear message after 4 seconds
-  setTimeout(() => {
-    formMsg.textContent = "";
-    formMsg.className = "form-note";
-  }, 4000);
+    skillFills.forEach((fill) => skillObserver.observe(fill));
+  }
+
+  // ============================================
+  // PROJECTS — FILTER TABS
+  // Event delegation — one listener on parent handles all buttons
+  // ============================================
+  const projectFilters = document.querySelector(".project-filters");
+  const projectItems = document.querySelectorAll(".project-item");
+
+  if (projectFilters && projectItems.length > 0) {
+    projectFilters.addEventListener("click", (e) => {
+      const clicked = e.target.closest(".filter-btn");
+      if (!clicked) return;
+
+      // Update active button
+      projectFilters
+        .querySelectorAll(".filter-btn")
+        .forEach((btn) => btn.classList.remove("active"));
+      clicked.classList.add("active");
+
+      const filter = clicked.getAttribute("data-filter");
+
+      // Show or hide projects
+      projectItems.forEach((item) => {
+        const match =
+          filter === "all" || item.getAttribute("data-category") === filter;
+        item.classList.toggle("hidden", !match);
+      });
+    });
+  }
+
+  // ============================================
+  // CONTACT FORM — VALIDATION
+  // Event delegation — one listener on form handles input resets
+  // ============================================
+  const formWrap = document.querySelector(".contact-form-wrap");
+  const sendBtn = document.getElementById("send-btn");
+  const formMsg = document.getElementById("form-msg");
+
+  if (formWrap && sendBtn && formMsg) {
+    // Reset border color on input when user starts typing
+    // Event delegation — one listener handles all inputs
+    formWrap.addEventListener("input", (e) => {
+      if (e.target.classList.contains("form-input")) {
+        e.target.style.borderColor = e.target.value.trim()
+          ? "var(--primary)"
+          : "var(--border)";
+      }
+    });
+
+    sendBtn.addEventListener("click", () => {
+      const inputs = formWrap.querySelectorAll(".form-input");
+      let allFilled = true;
+
+      inputs.forEach((input) => {
+        if (!input.value.trim()) {
+          allFilled = false;
+          input.style.borderColor = "#dc3545";
+        } else {
+          input.style.borderColor = "var(--primary)";
+        }
+      });
+
+      if (!allFilled) {
+        formMsg.textContent = "Please fill in all fields.";
+        formMsg.className = "form-note error";
+        return;
+      }
+
+      formMsg.textContent = "Message sent successfully!";
+      formMsg.className = "form-note success";
+
+      inputs.forEach((input) => {
+        input.value = "";
+        input.style.borderColor = "var(--border)";
+      });
+
+      setTimeout(() => {
+        formMsg.textContent = "";
+        formMsg.className = "form-note";
+      }, 4000);
+    });
+  }
+
+  // ============================================
+  // FOOTER — AUTO UPDATE COPYRIGHT YEAR
+  // ============================================
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 });
-// Auto update copyright year
-document.getElementById('year').textContent = new Date().getFullYear();

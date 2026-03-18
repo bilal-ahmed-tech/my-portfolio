@@ -3,61 +3,86 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Bilal — Frontend Web Developer specializing in HTML, CSS, Bootstrap and JavaScript. Available for freelance projects." />
+    <meta
+      name="keywords"
+      content="frontend developer, web developer, HTML, CSS, Bootstrap, JavaScript, freelance, Pakistan" />
+    <meta name="author" content="Bilal Developer" />
+
     <title>Bilal Developer | Frontend Web Developer</title>
+
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="Style/style.css" />
   </head>
   <body>
-    <!-- NavBar -->
+    <!-- ===== NAVBAR ===== -->
     <header class="sticky-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary px-lg-3 shadow-sm">
         <div class="container-fluid">
-          <a class="navbar-brand gradient-text p-0" href="#">Bilal Developer</a>
+          <a class="navbar-brand gradient-text p-0" href="#home"
+            >Bilal Developer</a
+          >
+
           <button
-            class="navbar-toggler border-0"
+            class="navbar-toggler border-0 d-lg-none"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fa-solid fa-bars fs-4 toggler-open"></i>
+            <i class="fa-solid fa-xmark fs-4 toggler-close d-none"></i>
           </button>
+
           <div class="collapse navbar-collapse flex-lg-grow-0" id="navbarNav">
             <ul class="navbar-nav gap-lg-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#home"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Skills</a>
+                <a class="nav-link" href="#skills">Skills</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
+                <a class="nav-link" href="#services">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#projects">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#contact">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link-btn btn btn-primary-custom" href="#"
+                <a class="nav-link-btn btn btn-primary-custom" href="#contact"
                   >Hire Me</a
                 >
               </li>
@@ -66,8 +91,9 @@
         </div>
       </nav>
     </header>
+
     <main>
-      <!-- HERO SECTION -->
+      <!-- ===== HERO SECTION ===== -->
       <section id="home" class="hero-section">
         <div class="container">
           <div
@@ -80,15 +106,15 @@
                 Bilal <span class="gradient-text">Developer</span>
               </h1>
               <h2 class="hero-title">Frontend Web Developer</h2>
-              <p class="hero-desc">
+              <p class="hero-desc mx-auto">
                 I build clean, fast, and mobile-friendly websites for small
                 businesses and startups using HTML, CSS, and Bootstrap.
               </p>
               <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary-custom me-3"
+                <a href="#contact" class="btn btn-primary-custom btn-hero"
                   >Hire Me</a
                 >
-                <a href="#projects" class="btn btn-outline-custom"
+                <a href="#projects" class="btn btn-outline-custom btn-hero"
                   >View Projects</a
                 >
               </div>
@@ -100,14 +126,15 @@
               <div class="hero-img-wrap">
                 <img
                   src="images/profile-pic.webp"
-                  alt="Bilal Developer"
+                  alt="Bilal Developer — Frontend Web Developer"
                   class="hero-img" />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- ABOUT SECTION -->
+
+      <!-- ===== ABOUT SECTION ===== -->
       <section id="about" class="about-section">
         <div class="container">
           <div
@@ -167,16 +194,16 @@
                 href="files/Bilal-CV.pdf"
                 download
                 class="btn btn-primary-custom btn-hero mt-4">
-                <i class="fa-solid fa-download"></i>Download CV
+                <i class="fa-solid fa-download"></i> Download CV
               </a>
             </div>
           </div>
         </div>
       </section>
-      <!-- SKILLS SECTION -->
+
+      <!-- ===== SKILLS SECTION ===== -->
       <section id="skills" class="skills-section">
         <div class="container">
-          <!-- Section Header -->
           <div class="text-center mb-5">
             <p class="section-subtitle">What I Know</p>
             <h2 class="section-title">
@@ -189,9 +216,9 @@
               <!-- HTML5 -->
               <div class="skill-item html">
                 <div class="skill-info">
-                  <span class="skill-name">
-                    <i class="fa-brands fa-html5"></i>HTML5
-                  </span>
+                  <span class="skill-name"
+                    ><i class="fa-brands fa-html5"></i>HTML5</span
+                  >
                   <span class="skill-percent">90%</span>
                 </div>
                 <div class="skill-bar">
@@ -202,9 +229,9 @@
               <!-- CSS3 -->
               <div class="skill-item css">
                 <div class="skill-info">
-                  <span class="skill-name">
-                    <i class="fa-brands fa-css3-alt"></i>CSS3
-                  </span>
+                  <span class="skill-name"
+                    ><i class="fa-brands fa-css3-alt"></i>CSS3</span
+                  >
                   <span class="skill-percent">85%</span>
                 </div>
                 <div class="skill-bar">
@@ -215,9 +242,9 @@
               <!-- JavaScript -->
               <div class="skill-item js">
                 <div class="skill-info">
-                  <span class="skill-name">
-                    <i class="fa-brands fa-js"></i>JavaScript
-                  </span>
+                  <span class="skill-name"
+                    ><i class="fa-brands fa-js"></i>JavaScript</span
+                  >
                   <span class="skill-percent">75%</span>
                 </div>
                 <div class="skill-bar">
@@ -228,9 +255,9 @@
               <!-- Bootstrap -->
               <div class="skill-item bs">
                 <div class="skill-info">
-                  <span class="skill-name">
-                    <i class="fa-brands fa-bootstrap"></i>Bootstrap
-                  </span>
+                  <span class="skill-name"
+                    ><i class="fa-brands fa-bootstrap"></i>Bootstrap</span
+                  >
                   <span class="skill-percent">85%</span>
                 </div>
                 <div class="skill-bar">
@@ -241,9 +268,9 @@
               <!-- Git & GitHub -->
               <div class="skill-item git">
                 <div class="skill-info">
-                  <span class="skill-name">
-                    <i class="fa-brands fa-git-alt"></i>Git & GitHub
-                  </span>
+                  <span class="skill-name"
+                    ><i class="fa-brands fa-git-alt"></i>Git & GitHub</span
+                  >
                   <span class="skill-percent">70%</span>
                 </div>
                 <div class="skill-bar">
@@ -254,9 +281,10 @@
               <!-- Responsive Design -->
               <div class="skill-item rwd">
                 <div class="skill-info">
-                  <span class="skill-name">
-                    <i class="fa-solid fa-mobile-screen"></i>Responsive Design
-                  </span>
+                  <span class="skill-name"
+                    ><i class="fa-solid fa-mobile-screen"></i>Responsive
+                    Design</span
+                  >
                   <span class="skill-percent">85%</span>
                 </div>
                 <div class="skill-bar">
@@ -267,10 +295,10 @@
           </div>
         </div>
       </section>
-      <!-- SERVICES SECTION -->
+
+      <!-- ===== SERVICES SECTION ===== -->
       <section id="services" class="services-section">
         <div class="container">
-          <!-- Section Header -->
           <div class="text-center mb-5">
             <p class="section-subtitle">What I Offer</p>
             <h2 class="section-title">
@@ -395,10 +423,10 @@
           </div>
         </div>
       </section>
-      <!-- PROJECTS SECTION -->
+
+      <!-- ===== PROJECTS SECTION ===== -->
       <section id="projects" class="projects-section">
         <div class="container">
-          <!-- Section Header -->
           <div class="text-center mb-5">
             <p class="section-subtitle">My Work</p>
             <h2 class="section-title">
@@ -526,7 +554,7 @@
             </div>
           </div>
 
-          <!-- View More Button -->
+          <!-- View More -->
           <div class="text-center mt-5">
             <a
               href="https://github.com/yourusername"
@@ -537,10 +565,10 @@
           </div>
         </div>
       </section>
-      <!-- CONTACT SECTION -->
+
+      <!-- ===== CONTACT SECTION ===== -->
       <section id="contact" class="contact-section">
         <div class="container">
-          <!-- Section Header -->
           <div class="text-center mb-5">
             <p class="section-subtitle">Get In Touch</p>
             <h2 class="section-title">
@@ -625,7 +653,7 @@
                   </div>
                   <div class="contact-detail">
                     <span class="contact-label">Location</span>
-                    <span class="contact-value">Karachi, Pakistan</span>
+                    <span class="contact-value">Faisalabad, Pakistan</span>
                   </div>
                 </div>
               </div>
@@ -675,8 +703,7 @@
                       type="button"
                       class="btn btn-primary-custom btn-hero w-100"
                       id="send-btn">
-                      <i class="fa-solid fa-paper-plane"></i>
-                      Send Message
+                      <i class="fa-solid fa-paper-plane"></i> Send Message
                     </button>
                     <p class="form-note" id="form-msg"></p>
                   </div>
@@ -687,10 +714,10 @@
         </div>
       </section>
     </main>
-    <!-- FOOTER -->
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
       <div class="container">
-        <!-- Top Row -->
         <div class="footer-top">
           <div class="footer-brand">
             <a href="#home" class="footer-logo">Bilal <span>Developer</span></a>
@@ -700,7 +727,6 @@
             </p>
           </div>
 
-          <!-- Quick Links -->
           <div class="footer-links">
             <h4 class="footer-heading">Quick Links</h4>
             <ul class="footer-nav">
@@ -712,7 +738,6 @@
             </ul>
           </div>
 
-          <!-- Social Icons -->
           <div class="footer-social-wrap">
             <h4 class="footer-heading">Find Me On</h4>
             <div class="footer-socials">
@@ -747,10 +772,8 @@
           </div>
         </div>
 
-        <!-- Divider -->
         <div class="footer-divider"></div>
 
-        <!-- Bottom Row -->
         <div class="footer-bottom">
           <p class="footer-copy">
             &copy; <span id="year"></span> Bilal Developer. All rights reserved.
@@ -761,10 +784,14 @@
         </div>
       </div>
     </footer>
+
+    <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
     <script src="Script/script.js"></script>
   </body>
 </html>
