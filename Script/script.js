@@ -32,24 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const lgBreakpoint = window.matchMedia("(min-width: 992px)");
 
-lgBreakpoint.addEventListener("change", (e) => {
-  // Temporarily disable transition
-  navCollapse.style.transition = "none";
+  lgBreakpoint.addEventListener("change", (e) => {
+    // Temporarily disable transition
+    navCollapse.style.transition = "none";
 
-  if (e.matches) {
-    // Crossed to desktop — close menu if open
-    if (navCollapse.classList.contains("show")) {
-      bsCollapse.hide();
+    if (e.matches) {
+      // Crossed to desktop — close menu if open
+      if (navCollapse.classList.contains("show")) {
+        bsCollapse.hide();
+      }
     }
-  } 
 
-  // Re-enable transition after a frame
-  requestAnimationFrame(() => {
+    // Re-enable transition after a frame
     requestAnimationFrame(() => {
-      navCollapse.style.transition = "";
+      requestAnimationFrame(() => {
+        navCollapse.style.transition = "";
+      });
     });
   });
-});
 
   // ============================================
   // ACTIVE NAV LINK ON SCROLL
@@ -155,37 +155,112 @@ lgBreakpoint.addEventListener("change", (e) => {
       }
     });
 
-    sendBtn.addEventListener("click", () => {
+    sendBtn.addEventListener("click", async () => {
       const inputs = formWrap.querySelectorAll(".form-input");
-      let allFilled = true;
+
+      // Validation rules
+      const validators = {
+        name: {
+          validate: (val) => val.trim().length >= 2,
+          message: "Name must be at least 2 characters.",
+        },
+        email: {
+          validate: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()),
+          message: "Please enter a valid email address.",
+        },
+        subject_line: {
+          validate: (val) => val.trim().length >= 3,
+          message: "Subject must be at least 3 characters.",
+        },
+        message: {
+          validate: (val) => val.trim().length >= 10,
+          message: "Message must be at least 10 characters.",
+        },
+      };
+
+      // Run validation
+      let allValid = true;
+      let firstError = "";
 
       inputs.forEach((input) => {
-        if (!input.value.trim()) {
-          allFilled = false;
-          input.style.borderColor = "#dc3545";
-        } else {
-          input.style.borderColor = "var(--primary)";
+        const rule = validators[input.getAttribute("name")];
+        if (rule) {
+          if (!rule.validate(input.value)) {
+            allValid = false;
+            input.style.borderColor = "#dc3545";
+            if (!firstError) firstError = rule.message;
+          } else {
+            input.style.borderColor = "var(--primary)";
+          }
         }
       });
 
-      if (!allFilled) {
-        formMsg.textContent = "Please fill in all fields.";
+      if (!allValid) {
+        formMsg.textContent = firstError;
         formMsg.className = "form-note error";
         return;
       }
 
-      formMsg.textContent = "Message sent successfully!";
-      formMsg.className = "form-note success";
+      // Loading state
+      sendBtn.disabled = true;
+      sendBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
+      formMsg.textContent = "";
+      formMsg.className = "form-note";
 
-      inputs.forEach((input) => {
-        input.value = "";
-        input.style.borderColor = "var(--border)";
-      });
+      // Collect form data
+      const formData = new FormData();
+      formData.append(
+        "access_key",
+        document.querySelector('[name="access_key"]').value,
+      );
+      formData.append(
+        "subject",
+        document.querySelector('[name="subject"]').value,
+      );
+      formData.append("name", document.querySelector('[name="name"]').value);
+      formData.append("email", document.querySelector('[name="email"]').value);
+      formData.append(
+        "subject_line",
+        document.querySelector('[name="subject_line"]').value,
+      );
+      formData.append(
+        "message",
+        document.querySelector('[name="message"]').value,
+      );
+      formData.append("botcheck", "");
 
-      setTimeout(() => {
-        formMsg.textContent = "";
-        formMsg.className = "form-note";
-      }, 4000);
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          formMsg.textContent = "Message sent! I'll get back to you soon.";
+          formMsg.className = "form-note success";
+
+          inputs.forEach((input) => {
+            input.value = "";
+            input.style.borderColor = "var(--border)";
+          });
+
+          setTimeout(() => {
+            formMsg.textContent = "";
+            formMsg.className = "form-note";
+          }, 5000);
+        } else {
+          formMsg.textContent = "Something went wrong. Please try again.";
+          formMsg.className = "form-note error";
+        }
+      } catch (error) {
+        formMsg.textContent = "Network error. Please check your connection.";
+        formMsg.className = "form-note error";
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Send Message`;
+      }
     });
   }
 

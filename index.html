@@ -125,7 +125,7 @@
               class="col-lg-4 col-md-8 col-10 text-center order-1 order-lg-2 mb-4 mb-lg-0">
               <div class="hero-img-wrap">
                 <img
-                  src="images/profile-pic.webp"
+                  src="Images/profile-pic.webp"
                   alt="Bilal Developer — Frontend Web Developer"
                   class="hero-img" />
               </div>
@@ -143,7 +143,7 @@
             <div class="col-lg-5 col-md-8 col-10 text-center">
               <div class="about-img-wrap">
                 <img
-                  src="images/profile-pic.webp"
+                  src="Images/profile-pic.webp"
                   loading="lazy"
                   alt="Bilal Developer"
                   class="about-img" />
@@ -663,11 +663,26 @@
             <div class="col-lg-6 col-md-12">
               <div class="contact-form-wrap">
                 <div class="row g-3">
+                  <!-- Hidden Web3Forms fields -->
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="62c2cf0b-d0d5-4d51-96eb-1b4f76efe481" />
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="New message from Portfolio" />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    style="display: none" />
+
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="form-label-custom">Your Name</label>
                       <input
                         type="text"
+                        name="name"
                         class="form-input"
                         placeholder="John Doe" />
                     </div>
@@ -677,6 +692,7 @@
                       <label class="form-label-custom">Your Email</label>
                       <input
                         type="email"
+                        name="email"
                         class="form-input"
                         placeholder="john@email.com" />
                     </div>
@@ -686,6 +702,7 @@
                       <label class="form-label-custom">Subject</label>
                       <input
                         type="text"
+                        name="subject_line"
                         class="form-input"
                         placeholder="Project Discussion" />
                     </div>
@@ -694,6 +711,7 @@
                     <div class="form-group">
                       <label class="form-label-custom">Message</label>
                       <textarea
+                        name="message"
                         class="form-input form-textarea"
                         placeholder="Tell me about your project..."></textarea>
                     </div>
