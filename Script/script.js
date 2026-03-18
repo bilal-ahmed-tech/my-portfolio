@@ -80,3 +80,5 @@ sendBtn.addEventListener("click", () => {
     formMsg.className = "form-note";
   }, 4000);
 });
+// Auto update copyright year
+document.getElementById('year').textContent = new Date().getFullYear();
