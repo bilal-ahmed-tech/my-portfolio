@@ -54,6 +54,9 @@ section {
   border-radius: 10px;
   padding: 10px 30px;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   transition: box-shadow 0.2s;
 }
 
@@ -308,6 +311,108 @@ section {
   color: var(--text-muted);
   font-weight: 500;
 }
+/* ===== SKILLS SECTION ===== */
+.skills-section {
+  background-color: var(--bg-main);
+}
+
+/* Skill item — mobile first */
+.skill-item {
+  margin-bottom: 24px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.skill-name i {
+  font-size: 1.4rem;
+  width: 24px;
+  text-align: center;
+}
+
+.skill-percent {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Progress bar track */
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #f0ede8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Progress bar fill */
+.skill-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  transition: width 1.2s ease-in-out;
+}
+
+/* ===== REAL ICON COLORS ===== */
+.skill-item.html .skill-name i {
+  color: #e44d26;
+}
+.skill-item.css .skill-name i {
+  color: #1572b6;
+}
+.skill-item.js .skill-name i {
+  color: #f0db4f;
+  text-shadow: 
+    -2px -2px 0 #2a2a2a,
+     2px -2px 0 #2a2a2a,
+    -2px  2px 0 #2a2a2a,
+     2px  2px 0 #2a2a2a;
+}
+
+.skill-item.bs .skill-name i {
+  color: #7952b3;
+}
+.skill-item.git .skill-name i {
+  color: #f05032;
+}
+.skill-item.rwd .skill-name i {
+  color: var(--primary);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .skill-name {
+    font-size: 1rem;
+    gap: 12px;
+  }
+
+  .skill-name i {
+    font-size: 1.6rem;
+    width: 28px;
+  }
+
+  .skill-item {
+    margin-bottom: 28px;
+  }
+
+  .skill-bar {
+    height: 10px;
+  }
+}
 
 /* ===== MOBILE ===== */
 @media screen and (max-width: 991px) {
@@ -350,6 +455,14 @@ section {
 @media screen and (min-width: 992px) {
   .nav-link-btn {
     width: fit-content;
+  }
+  .skill-name i {
+    font-size: 1.8rem;
+    width: 30px;
+  }
+
+  .skill-item {
+    margin-bottom: 32px;
   }
   .nav-link-btn.btn-primary-custom {
     padding: 8px 30px;
