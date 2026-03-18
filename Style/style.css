@@ -508,6 +508,184 @@ section {
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
 }
+/* ===== PROJECTS SECTION ===== */
+.projects-section {
+  background-color: var(--bg-main);
+}
+
+/* ===== FILTER BUTTONS ===== */
+.project-filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  padding: 8px 22px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+  font-family: "Poppins", sans-serif;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-color: transparent;
+  color: #fff!important;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.project-img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 16 / 10;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+/* ===== OVERLAY ===== */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease-in;
+  border-radius: 16px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay-content {
+  text-align: center;
+  padding: 20px;
+  transform: translateY(12px);
+  transition: transform 0.35s ease-in;
+}
+
+.project-card:hover .project-overlay-content {
+  transform: translateY(0);
+}
+
+.project-overlay-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.project-tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Overlay Buttons */
+.project-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease-in;
+}
+
+.project-btn:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+
+.project-btn-outline {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.project-btn-outline:hover {
+  background: #fff;
+  color: var(--primary);
+  opacity: 1;
+}
+
+/* Hidden project items */
+.project-item.hidden {
+  display: none;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .project-overlay-title {
+    font-size: 1.2rem;
+  }
+
+  .filter-btn {
+    padding: 9px 26px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .project-overlay-title {
+    font-size: 1.3rem;
+  }
+}
 
 /* Tablet */
 
