@@ -376,11 +376,11 @@ section {
 }
 .skill-item.js .skill-name i {
   color: #f0db4f;
-  text-shadow: 
+  text-shadow:
     -2px -2px 0 #2a2a2a,
-     2px -2px 0 #2a2a2a,
-    -2px  2px 0 #2a2a2a,
-     2px  2px 0 #2a2a2a;
+    2px -2px 0 #2a2a2a,
+    -2px 2px 0 #2a2a2a,
+    2px 2px 0 #2a2a2a;
 }
 
 .skill-item.bs .skill-name i {
@@ -392,6 +392,124 @@ section {
 .skill-item.rwd .skill-name i {
   color: var(--primary);
 }
+/* ===== SERVICES SECTION ===== */
+.services-section {
+  background-color: var(--bg-section);
+}
+
+/* Card — mobile first */
+.service-card {
+  background: var(--bg-main);
+  border-radius: 16px;
+  padding: 28px 24px;
+  height: 100%;
+  border: 1px solid var(--border);
+  transition:
+    transform 0.3s ease-in,
+    box-shadow 0.3s ease-in,
+    border-color 0.3s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient top border on hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in;
+  transform-origin: left;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(255, 87, 34, 0.12);
+  border-color: transparent;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Icon */
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--primary-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: background 0.3s ease-in;
+}
+
+.service-icon i {
+  font-size: 1.4rem;
+  color: var(--primary);
+  transition: color 0.3s ease-in;
+}
+
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+.service-card:hover .service-icon i {
+  color: #fff;
+}
+
+/* Title */
+.service-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+}
+
+/* Description */
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* Feature list */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.service-list li {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding-left: 18px;
+  position: relative;
+}
+
+.service-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+/* Tablet */
 
 /* Tablet */
 @media (min-width: 768px) {
@@ -411,6 +529,26 @@ section {
 
   .skill-bar {
     height: 10px;
+  }
+  .service-card {
+    padding: 32px 28px;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+  }
+
+  .service-icon {
+    width: 62px;
+    height: 62px;
+  }
+
+  .service-icon i {
+    font-size: 1.6rem;
   }
 }
 
@@ -466,5 +604,13 @@ section {
   }
   .nav-link-btn.btn-primary-custom {
     padding: 8px 30px;
+    .service-icon {
+      width: 68px;
+      height: 68px;
+    }
+
+    .service-icon i {
+      font-size: 1.8rem;
+    }
   }
 }
