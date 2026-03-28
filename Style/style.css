@@ -748,7 +748,7 @@ section[id] {
 }
 
 .project-desc {
-  font-size: clamp(0.8rem, calc(0.78rem + 0.15vw), 1rem);
+  font-size: clamp(0.85rem, calc(0.84rem + 0.25vw), 1.2rem);
   color: var(--text-muted);
   line-height: 1.7;
   display: flex;
