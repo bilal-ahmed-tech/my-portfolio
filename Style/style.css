@@ -752,6 +752,7 @@ section[id] {
   color: var(--text-muted);
   line-height: 1.7;
   display: flex;
+  text-align: justify;
   align-items: flex-end;
   margin: 0;
   flex: 1;
