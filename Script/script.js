@@ -9,19 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (navCollapse) {
     const bsCollapse = new bootstrap.Collapse(navCollapse, { toggle: false });
 
-    // Switch hamburger to X
     navCollapse.addEventListener("show.bs.collapse", () => {
       togglerOpen?.classList.add("d-none");
       togglerClose?.classList.remove("d-none");
     });
 
-    // Switch X back to hamburger
     navCollapse.addEventListener("hide.bs.collapse", () => {
       togglerOpen?.classList.remove("d-none");
       togglerClose?.classList.add("d-none");
     });
 
-    // Event delegation — one listener on navbar-nav handles all link clicks
     const navbarNav = document.querySelector(".navbar-nav");
     navbarNav?.addEventListener("click", (e) => {
       const clicked = e.target.closest(".nav-link, .nav-link-btn");
@@ -29,27 +26,19 @@ document.addEventListener("DOMContentLoaded", () => {
         bsCollapse.hide();
       }
     });
-  }
-  const lgBreakpoint = window.matchMedia("(min-width: 992px)");
-
-  lgBreakpoint.addEventListener("change", (e) => {
-    // Temporarily disable transition
-    navCollapse.style.transition = "none";
-
-    if (e.matches) {
-      // Crossed to desktop — close menu if open
-      if (navCollapse.classList.contains("show")) {
+    const lgBreakpoint = window.matchMedia("(min-width: 992px)");
+    lgBreakpoint.addEventListener("change", (e) => {
+      navCollapse.style.transition = "none";
+      if (e.matches && navCollapse.classList.contains("show")) {
         bsCollapse.hide();
       }
-    }
-
-    // Re-enable transition after a frame
-    requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        navCollapse.style.transition = "";
+        requestAnimationFrame(() => {
+          navCollapse.style.transition = "";
+        });
       });
     });
-  });
+  }
 
   // ============================================
   // ACTIVE NAV LINK ON SCROLL
@@ -130,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show or hide projects
       projectItems.forEach((item) => {
         const match =
-          filter === "all" || item.getAttribute("data-category") === filter;
+          filter === "all" || item.getAttribute("data-category") === filter || item.getAttribute("data-category").includes(filter);
         item.classList.toggle("hidden", !match);
       });
     });
@@ -140,13 +129,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // CONTACT FORM — VALIDATION
   // Event delegation — one listener on form handles input resets
   // ============================================
+  // ============================================
+  // CONTACT FORM — VALIDATION
+  // ============================================
   const formWrap = document.querySelector(".contact-form-wrap");
+  const contactForm = document.querySelector(".contact-form-wrap form");
   const sendBtn = document.getElementById("send-btn");
   const formMsg = document.getElementById("form-msg");
 
-  if (formWrap && sendBtn && formMsg) {
+  if (formWrap && contactForm && sendBtn && formMsg) {
     // Reset border color on input when user starts typing
-    // Event delegation — one listener handles all inputs
     formWrap.addEventListener("input", (e) => {
       if (e.target.classList.contains("form-input")) {
         e.target.style.borderColor = e.target.value.trim()
@@ -155,7 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    sendBtn.addEventListener("click", async () => {
+    // Submit instead of click — also fires on Enter key
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
       const inputs = formWrap.querySelectorAll(".form-input");
 
       // Validation rules
@@ -190,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input.style.borderColor = "#dc3545";
             if (!firstError) firstError = rule.message;
           } else {
-            input.style.borderColor = "var(--primary)";
+            input.style.borderColor = "var(--primary-dark)";
           }
         }
       });

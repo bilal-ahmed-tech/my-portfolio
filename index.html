@@ -30,20 +30,55 @@
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="Style/style.css" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="Images/favicon/favicon.ico"
+      type="image/x-icon" />
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://bilal-ahmed-tech.github.io/my-portfolio/" />
+    <meta
+      property="og:title"
+      content="Bilal Developer | Frontend Web Developer" />
+    <meta
+      property="og:description"
+      content="Frontend Web Developer specializing in HTML, CSS, Bootstrap and JavaScript. Available for freelance projects." />
+    <meta
+      property="og:image"
+      content="https://bilal-ahmed-tech.github.io/my-portfolio/website-og-img.jpg" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://bilal-ahmed-tech.github.io/my-portfolio/" />
+    <meta
+      name="twitter:title"
+      content="Bilal Developer | Frontend Web Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Web Developer specializing in HTML, CSS, Bootstrap and JavaScript. Available for freelance projects." />
+    <meta
+      name="twitter:image"
+      content="https://bilal-ahmed-tech.github.io/my-portfolio/Images/website-og-img.jpg" />
   </head>
   <body>
     <!-- ===== NAVBAR ===== -->
     <header class="sticky-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary px-lg-3 shadow-sm">
-        <div class="container-fluid">
-          <a class="navbar-brand gradient-text p-0" href="#home"
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary px-lg-2 py-3 shadow-sm">
+        <div
+          class="container-fluid position-relative justify-content-xxl-around">
+          <a class="navbar-brand gradient-text p-0 fs-3" href="#home"
             >Bilal Developer</a
           >
 
@@ -55,12 +90,12 @@
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars fs-4 toggler-open"></i>
-            <i class="fa-solid fa-xmark fs-4 toggler-close d-none"></i>
+            <i class="fa-solid fa-bars toggler-open fs-2"></i>
+            <i class="fa-solid fa-xmark toggler-close d-none fs-2"></i>
           </button>
 
           <div class="collapse navbar-collapse flex-lg-grow-0" id="navbarNav">
-            <ul class="navbar-nav gap-lg-3">
+            <ul class="navbar-nav align-items-lg-center gap-lg-2 gap-xl-4">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#home"
                   >Home</a
@@ -97,7 +132,7 @@
       <section id="home" class="hero-section">
         <div class="container">
           <div
-            class="row align-items-center justify-content-lg-between justify-content-center">
+            class="row align-items-center justify-content-lg-around justify-content-xxl-between justify-content-center">
             <!-- Text Side -->
             <div
               class="col-lg-6 col-md-12 text-center order-2 order-lg-1 hero-text">
@@ -110,7 +145,7 @@
                 I build clean, fast, and mobile-friendly websites for small
                 businesses and startups using HTML, CSS, and Bootstrap.
               </p>
-              <div class="hero-btns">
+              <div class="hero-btns gap-xl-4">
                 <a href="#contact" class="btn btn-primary-custom btn-hero"
                   >Hire Me</a
                 >
@@ -125,6 +160,8 @@
               class="col-lg-4 col-md-8 col-10 text-center order-1 order-lg-2 mb-4 mb-lg-0">
               <div class="hero-img-wrap">
                 <img
+                  width="1024"
+                  height="1074"
                   src="Images/profile-pic.webp"
                   alt="Bilal Developer — Frontend Web Developer"
                   class="hero-img" />
@@ -138,7 +175,7 @@
       <section id="about" class="about-section">
         <div class="container">
           <div
-            class="row align-items-center justify-content-center gap-4 gap-lg-0">
+            class="row align-items-center justify-content-center gap-4 gap-xxl-3 gap-lg-0">
             <!-- Image Side -->
             <div class="col-lg-5 col-md-8 col-10 text-center">
               <div class="about-img-wrap">
@@ -264,7 +301,38 @@
                   <div class="skill-fill" data-width="85"></div>
                 </div>
               </div>
-
+              <!-- React -->
+              <div class="skill-item react">
+                <div class="skill-info">
+                  <span class="skill-name"
+                    ><i class="fa-brands fa-react"></i>React</span
+                  >
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-width="75"></div>
+                </div>
+              </div>
+              <!-- Tailwind CSS -->
+              <div class="skill-item tailwind">
+                <div class="skill-info">
+                  <span class="skill-name"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tailwind-css"
+                      viewBox="0 0 640 640">
+                      <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                      <path
+                        d="M320 128C234.7 128 181.3 170.7 160 256C192 213.3 229.3 197.3 272 208C296.3 214.1 313.7 231.8 333 251.3C364.4 283.1 400.7 320 480 320C565.3 320 618.7 277.3 640 192C608 234.7 570.7 250.7 528 240C503.7 233.9 486.3 216.2 467 196.7C435.6 164.9 399.3 128 320 128zM160 320C74.7 320 21.3 362.7 0 448C32 405.3 69.3 389.3 112 400C136.3 406.1 153.7 423.8 173 443.3C204.4 475.1 240.7 512 320 512C405.3 512 458.7 469.3 480 384C448 426.7 410.7 442.7 368 432C343.7 425.9 326.3 408.2 307 388.7C275.6 356.9 239.3 320 160 320z" />
+                    </svg>
+                    Tailwind CSS</span
+                  >
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" data-width="80"></div>
+                </div>
+              </div>
               <!-- Git & GitHub -->
               <div class="skill-item git">
                 <div class="skill-info">
@@ -445,119 +513,162 @@
           </div>
 
           <!-- Projects Grid -->
-          <div class="row g-4 justify-content-center" id="projects-grid">
-            <!-- Project 1 -->
+          <div
+            class="row g-4 justify-content-center align-items-stretch"
+            id="projects-grid">
+            <!-- Project 1 — Restaurant Landing Page -->
             <div
               class="col-lg-4 col-md-6 col-12 project-item"
-              data-category="landing">
+              data-category="landing,website"
+              data-aos="fade-up">
               <div class="project-card">
                 <div class="project-img-wrap">
                   <img
-                    src="https://placehold.co/800x500/ff5722/ffffff?text=Gym+Landing+Page"
-                    alt="Gym Landing Page"
+                    src="Images/project-1.webp"
+                    alt="Saveur Fine Dining Landing Page"
                     class="project-img"
                     loading="lazy" />
-                  <div class="project-overlay">
-                    <div class="project-overlay-content">
-                      <h3 class="project-overlay-title">Gym Landing Page</h3>
-                      <div class="project-tags">
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">Bootstrap</span>
-                      </div>
-                      <div class="project-btns">
-                        <a href="#" target="_blank" class="project-btn">
-                          <i class="fa-solid fa-eye"></i> Live
-                        </a>
-                        <a
-                          href="#"
-                          target="_blank"
-                          class="project-btn project-btn-outline">
-                          <i class="fa-brands fa-github"></i> Code
-                        </a>
-                      </div>
-                    </div>
+                  <div class="project-badge">Premium UI</div>
+                </div>
+                <div class="project-info">
+                  <h4 class="project-title">Saveur Restaurant Landing Page</h4>
+                  <div class="project-tags">
+                    <span class="project-tag"
+                      ><i class="fa-brands fa-bootstrap"></i> Bootstrap 5</span
+                    >
+                    <span class="project-tag"
+                      ><i class="fa-brands fa-js"></i> JavaScript</span
+                    >
+                    <span class="project-tag">Fluid UI</span>
+                  </div>
+                  <p class="project-desc">
+                    A luxury dining experience featuring a custom infinite
+                    testimonial slider, tabbed interactive menus, and a secure
+                    reservation system with real-time validation.
+                  </p>
+                  <div class="project-btns mt-auto">
+                    <a
+                      href="https://bilal-ahmed-tech.github.io/saveur-restaurant/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="project-btn"
+                      aria-label="View Live Saveur Website">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/bilal-ahmed-tech/saveur-restaurant"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="project-btn project-btn-outline"
+                      aria-label="View Saveur Source Code on GitHub">
+                      <i class="fa-brands fa-github"></i> View Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project 2 — Personal Portfolio -->   
+            <div
+              class="col-lg-4 col-md-6 col-12 project-item"
+              data-category="website"
+              data-aos="fade-up"
+              data-aos-delay="100">
+              <div class="project-card">
+                <div class="project-img-wrap">
+                  <img
+                    src="Images/protfolio-project-preview.png"
+                    alt="Personal Portfolio Showcase"
+                    class="project-img"
+                    loading="lazy" />
+                  <div class="project-badge">Current Site</div>
+                </div>
+                <div class="project-info">
+                  <h4 class="project-title">Professional Portfolio v1.0</h4>
+                  <div class="project-tags">
+                    <span class="project-tag"
+                      ><i class="fa-brands fa-html5"></i> Semantic</span
+                    >
+                    <span class="project-tag"
+                      ><i class="fa-solid fa-mobile-screen"></i>
+                      Mobile-First</span
+                    >
+                    <span class="project-tag">SEO</span>
+                  </div>
+                  <p class="project-desc">
+                    A high-performance digital resume featuring fluid typography
+                    scaling, Intersection Observer animations, and optimized
+                    asset delivery for near-perfect Lighthouse scores.
+                  </p>
+                  <div class="project-btns mt-auto">
+                    <a
+                      href="#home"
+                      class="project-btn portfolio-current"
+                      <i class="fa-solid fa-location-dot"></i> You Are Here
+                    </a>
+                    <a
+                      href="https://github.com/bilal-ahmed-tech/my-portfolio"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="project-btn project-btn-outline"
+                      aria-label="View Portfolio Source Code">
+                      <i class="fa-brands fa-github"></i> View Code
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Project 3 — React Project -->
             <div
-              class="col-lg-4 col-md-6 col-12 project-item"
-              data-category="website">
-              <div class="project-card">
-                <div class="project-img-wrap">
-                  <img
-                    src="https://placehold.co/800x500/ff8a50/ffffff?text=Agency+Website"
-                    alt="Agency Website"
-                    class="project-img"
-                    loading="lazy" />
-                  <div class="project-overlay">
-                    <div class="project-overlay-content">
-                      <h3 class="project-overlay-title">Agency Website</h3>
-                      <div class="project-tags">
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                      </div>
-                      <div class="project-btns">
-                        <a href="#" target="_blank" class="project-btn">
-                          <i class="fa-solid fa-eye"></i> Live
-                        </a>
-                        <a
-                          href="#"
-                          target="_blank"
-                          class="project-btn project-btn-outline">
-                          <i class="fa-brands fa-github"></i> Code
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div
-              class="col-lg-4 col-md-6 col-12 project-item"
-              data-category="other">
-              <div class="project-card">
-                <div class="project-img-wrap">
-                  <img
-                    src="https://placehold.co/800x500/e44514/ffffff?text=Email+Template"
-                    alt="HTML Email Template"
-                    class="project-img"
-                    loading="lazy" />
-                  <div class="project-overlay">
-                    <div class="project-overlay-content">
-                      <h3 class="project-overlay-title">Email Template</h3>
-                      <div class="project-tags">
-                        <span class="project-tag">HTML</span>
-                        <span class="project-tag">CSS</span>
-                      </div>
-                      <div class="project-btns">
-                        <a href="#" target="_blank" class="project-btn">
-                          <i class="fa-solid fa-eye"></i> Live
-                        </a>
-                        <a
-                          href="#"
-                          target="_blank"
-                          class="project-btn project-btn-outline">
-                          <i class="fa-brands fa-github"></i> Code
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  class="col-lg-4 col-md-6 col-12 project-item"
+  data-category="app,other"
+  data-aos="fade-up"
+  data-aos-delay="200">
+  <div class="project-card coming-soon">
+    <div class="project-img-wrap">
+      <img
+        src="https://placehold.co/800x500/1a1a1a/61dafb?text=React+x+Tailwind+Project"
+        alt="Upcoming React Project"
+        class="project-img"
+         />
+      <div class="project-badge">Coming Soon</div>
+    </div>
+    <div class="project-info">
+      <h4 class="project-title">Advanced Web Application</h4>
+      <div class="project-tags">
+        <span class="project-tag"><i class="fa-brands fa-react"></i> React</span>
+        <span class="project-tag"><i class="fa-brands fa-tailwind-css"></i> Tailwind</span>
+        <span class="project-tag">API</span>
+      </div>
+      <p class="project-desc">
+        A complex web application focusing on state management, dynamic data fetching, 
+        and high-performance styling with Utility-First CSS.
+      </p>
+      <div class="project-btns mt-auto">
+        <a
+          href="#"
+          class="project-btn disabled"
+          aria-disabled="true">
+          <i class="fa-solid fa-hourglass-start"></i> In Development
+        </a>
+        <a
+          href="https://github.com/bilal-ahmed-tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-btn project-btn-outline">
+          <i class="fa-brands fa-github"></i> Follow Progress
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
 
           <!-- View More -->
           <div class="text-center mt-5">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/bilal-ahmed-tech"
               target="_blank"
               class="btn btn-outline-custom btn-hero">
               <i class="fa-brands fa-github"></i> View More on GitHub
@@ -592,8 +703,10 @@
                   </div>
                   <div class="contact-detail">
                     <span class="contact-label">Email</span>
-                    <a href="mailto:bilal@email.com" class="contact-value"
-                      >bilal@email.com</a
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&to=bilalahmed19015@gmail.com"
+                      class="contact-value"
+                      >bilalahmed19015@gmail.com</a
                     >
                   </div>
                 </div>
@@ -606,10 +719,10 @@
                   <div class="contact-detail">
                     <span class="contact-label">WhatsApp</span>
                     <a
-                      href="https://wa.me/923001234567"
+                      href="https://wa.me/923276742759"
                       target="_blank"
                       class="contact-value"
-                      >+92 300 1234567</a
+                      >+92 327-6742759</a
                     >
                   </div>
                 </div>
@@ -622,10 +735,10 @@
                   <div class="contact-detail">
                     <span class="contact-label">LinkedIn</span>
                     <a
-                      href="https://linkedin.com/in/yourprofile"
+                      href="https://www.linkedin.com/in/bilal-ahmed-b54439369/"
                       target="_blank"
                       class="contact-value"
-                      >linkedin.com/in/bilal</a
+                      >linkedin.com/in/bilal-ahmed-b54439369</a
                     >
                   </div>
                 </div>
@@ -638,10 +751,10 @@
                   <div class="contact-detail">
                     <span class="contact-label">GitHub</span>
                     <a
-                      href="https://github.com/yourusername"
+                      href="https://github.com/bilal-ahmed-tech"
                       target="_blank"
                       class="contact-value"
-                      >github.com/bilal</a
+                      >github.com/bilal-ahmed-tech</a
                     >
                   </div>
                 </div>
@@ -662,70 +775,88 @@
             <!-- Right Side — Contact Form -->
             <div class="col-lg-6 col-md-12">
               <div class="contact-form-wrap">
-                <div class="row g-3">
-                  <!-- Hidden Web3Forms fields -->
-                  <input
-                    type="hidden"
-                    name="access_key"
-                    value="62c2cf0b-d0d5-4d51-96eb-1b4f76efe481" />
-                  <input
-                    type="hidden"
-                    name="subject"
-                    value="New message from Portfolio" />
-                  <input
-                    type="checkbox"
-                    name="botcheck"
-                    style="display: none" />
+                <form action="https://api.web3forms.com/submit" method="POST">
+                  <div class="row g-3">
+                    <!-- Hidden Web3Forms fields -->
+                    <input
+                      type="hidden"
+                      name="access_key"
+                      value="62c2cf0b-d0d5-4d51-96eb-1b4f76efe481" />
+                    <input
+                      type="hidden"
+                      name="subject"
+                      value="New message from Portfolio" />
+                    <input
+                      type="checkbox"
+                      name="botcheck"
+                      style="display: none" />
 
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="form-label-custom">Your Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        class="form-input"
-                        placeholder="John Doe" />
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="name" class="form-label-custom"
+                          >Your Name</label
+                        >
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          class="form-input"
+                          placeholder="John Doe" />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="email" class="form-label-custom"
+                          >Your Email</label
+                        >
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          class="form-input"
+                          placeholder="john@email.com" />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="subject_line" class="form-label-custom"
+                          >Subject</label
+                        >
+                        <input
+                          type="text"
+                          id="subject_line"
+                          name="subject_line"
+                          class="form-input"
+                          placeholder="Project Discussion" />
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="message" class="form-label-custom"
+                          >Message</label
+                        >
+                        <textarea
+                          id="message"
+                          name="message"
+                          class="form-input form-textarea"
+                          placeholder="Tell me about your project..."></textarea>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <button
+                        type="submit"
+                        class="btn btn-primary-custom btn-hero w-100"
+                        id="send-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                      </button>
+                      <p class="form-note" id="form-msg"></p>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="form-label-custom">Your Email</label>
-                      <input
-                        type="email"
-                        name="email"
-                        class="form-input"
-                        placeholder="john@email.com" />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label class="form-label-custom">Subject</label>
-                      <input
-                        type="text"
-                        name="subject_line"
-                        class="form-input"
-                        placeholder="Project Discussion" />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label class="form-label-custom">Message</label>
-                      <textarea
-                        name="message"
-                        class="form-input form-textarea"
-                        placeholder="Tell me about your project..."></textarea>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button
-                      type="button"
-                      class="btn btn-primary-custom btn-hero w-100"
-                      id="send-btn">
-                      <i class="fa-solid fa-paper-plane"></i> Send Message
-                    </button>
-                    <p class="form-note" id="form-msg"></p>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -760,28 +891,29 @@
             <h4 class="footer-heading">Find Me On</h4>
             <div class="footer-socials">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/bilal-ahmed-tech"
                 target="_blank"
                 class="social-icon github"
                 aria-label="GitHub">
                 <i class="fa-brands fa-github"></i>
               </a>
               <a
-                href="https://linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/in/bilal-ahmed-b54439369/"
                 target="_blank"
                 class="social-icon linkedin"
                 aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
               <a
-                href="https://wa.me/923001234567"
+                href="https://wa.me/923276742759"
                 target="_blank"
                 class="social-icon whatsapp"
                 aria-label="WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
               <a
-                href="mailto:bilal@email.com"
+                href="https://mail.google.com/mail/?view=cm&to=bilalahmed19015@gmail.com"
+                target="_blank"
                 class="social-icon email"
                 aria-label="Email">
                 <i class="fa-solid fa-envelope"></i>
