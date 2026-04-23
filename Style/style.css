@@ -269,8 +269,8 @@ section[id] {
 }
 
 .hero-img {
-  width: clamp(220px, 18vw, 380px);
-  height: clamp(220px, 18vw, 380px);
+  width: clamp(280px, 18vw, 480px);
+  height: clamp(280px, 18vw, 480px);
   border-radius: 50%;
   object-fit: cover;
   position: relative;
@@ -310,7 +310,7 @@ section[id] {
 
 .about-img {
   width: 100%;
-  max-width: clamp(260px, 28vw, 540px);
+  max-width: clamp(290px, 30vw, 540px);
   border-radius: 20px;
   object-fit: cover;
   position: relative;
